@@ -34,10 +34,17 @@ class TestArea extends Component {
         </form>
         <button
           className="demo-test-area--button"
-          onClick={this.props.onRenderMessage}
+          onClick={this.props.onRenderCardMessage}
         >
           {" "}
           Render a Card Message{" "}
+        </button>
+        <button
+          className="demo-test-area--button"
+          onClick={this.props.onRenderListMessage}
+        >
+          {" "}
+          Render a List Message{" "}
         </button>
         <p className="demo-test-area--info">
           react-chat-window is a chat window that allows you to build and add

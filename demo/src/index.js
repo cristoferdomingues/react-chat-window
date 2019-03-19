@@ -94,6 +94,66 @@ class Demo extends Component {
     });
   }
 
+  __renderListMessage() {
+    const newMessagesCount = this.state.isOpen
+      ? this.state.newMessagesCount
+      : this.state.newMessagesCount + 1;
+    this.setState({
+      newMessagesCount: newMessagesCount,
+      messageList: [
+        ...this.state.messageList,
+        {
+          author: "them",
+          type: "list",
+          data: {
+            title: "Welcome!",
+            image_url: "https://www.fillmurray.com/300/300",
+            subtitle: "We have the right hat for everyone.",
+            elements: [
+              {
+                title: "Classic T-Shirt Collection",
+                subtitle: "See all our colors",
+                image_url: "https://www.fillmurray.com/60/60",
+                buttons: [
+                  {
+                    title: "View",
+                    type: "web_url",
+                    url: "https://peterssendreceiveapp.ngrok.io/collection",
+                    messenger_extensions: true,
+                    webview_height_ratio: "tall",
+                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                  }
+                ]
+              },
+              {
+                title: "Classic Blue T-Shirt",
+                image_url: "http://placeimg.com/60/60/any",
+                subtitle: "100% Cotton, 200% Comfortable",
+                default_action: {
+                  type: "web_url",
+                  url: "https://peterssendreceiveapp.ngrok.io/view?item=101",
+                  messenger_extensions: true,
+                  webview_height_ratio: "tall",
+                  fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                },
+                buttons: [
+                  {
+                    title: "Shop Now",
+                    type: "web_url",
+                    url: "https://peterssendreceiveapp.ngrok.io/shop?item=101",
+                    messenger_extensions: true,
+                    webview_height_ratio: "tall",
+                    fallback_url: "https://peterssendreceiveapp.ngrok.io/"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    });
+  }
+
   _handleClick() {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -107,7 +167,8 @@ class Demo extends Component {
         <Header />
         <TestArea
           onMessage={this._sendMessage.bind(this)}
-          onRenderMessage={this.__renderCardMessage.bind(this)}
+          onRenderCardMessage={this.__renderCardMessage.bind(this)}
+          onRenderListMessage={this.__renderListMessage.bind(this)}
         />
         <Launcher
           agentProfile={{

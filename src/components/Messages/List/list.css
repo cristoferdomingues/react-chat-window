@@ -1,0 +1,38 @@
+.sc-message--list .container {
+  padding: 2px 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  background: linear-gradient(180deg, #fff, #5d5d5d, #292929, #000);
+  opacity: 0.65;
+}
+.sc-message--list .list-container ul {
+  padding: 0;
+  list-style-type: none;
+}
+.sc-message--list .list-container ul > li {
+  padding: 10px;
+  border-bottom: #5d5d5d 1px solid;
+  list-style: none;
+}
+/* .sc-message--list .list-container ul > li:hover {
+  background: #eee;
+  cursor: pointer;
+} */
+.sc-message--list .list-container ul > li h3 {
+  font: bold 10px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.sc-message--list .list-container ul > li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+.sc-message--list .list-container ul > li p {
+  font: 200 10px/1.5 Georgia, Times New Roman, serif;
+}
+
+.sc-message--list .list-container ul > li .button {
+  margin-top: 15px;
+}
