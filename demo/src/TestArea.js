@@ -46,6 +46,13 @@ class TestArea extends Component {
           {" "}
           Render a List Message{" "}
         </button>
+        <button
+          className="demo-test-area--button"
+          onClick={this.props.onRenderQuickResponseMessage}
+        >
+          {" "}
+          Render a Quick Response{" "}
+        </button>
         <p className="demo-test-area--info">
           react-chat-window is a chat window that allows you to build and add
           custom live chat to your sites. It includes only the react chat

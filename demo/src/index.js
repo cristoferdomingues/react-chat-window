@@ -153,6 +153,41 @@ class Demo extends Component {
       ]
     });
   }
+  __renderQuickResponseMessage() {
+    const newMessagesCount = this.state.isOpen
+      ? this.state.newMessagesCount
+      : this.state.newMessagesCount + 1;
+    this.setState({
+      newMessagesCount: newMessagesCount,
+      messageList: [
+        ...this.state.messageList,
+        {
+          author: "them",
+          type: "quickResponse",
+          data: {
+            text: "What do you want to do next?",
+            buttons: [
+              {
+                type: "web_url",
+                url: "https://www.messenger.com",
+                title: "Visit Messenger"
+              },
+              {
+                type: "web_url",
+                url: "https://www.messenger.com",
+                title: "Visit Page"
+              },
+              {
+                type: "postback",
+                payload: "BACK_SLEEP",
+                title: "Back to Sleep"
+              }
+            ]
+          }
+        }
+      ]
+    });
+  }
 
   _handleClick() {
     this.setState({
@@ -169,6 +204,9 @@ class Demo extends Component {
           onMessage={this._sendMessage.bind(this)}
           onRenderCardMessage={this.__renderCardMessage.bind(this)}
           onRenderListMessage={this.__renderListMessage.bind(this)}
+          onRenderQuickResponseMessage={this.__renderQuickResponseMessage.bind(
+            this
+          )}
         />
         <Launcher
           agentProfile={{

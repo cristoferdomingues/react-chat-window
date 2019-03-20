@@ -11,9 +11,11 @@
   padding: 0;
   list-style-type: none;
 }
+.sc-message--list .list-container ul > li:not(:last-child) {
+  border-bottom: #9e9e9e 1px solid;
+}
 .sc-message--list .list-container ul > li {
   padding: 10px;
-  border-bottom: #5d5d5d 1px solid;
   list-style: none;
 }
 /* .sc-message--list .list-container ul > li:hover {

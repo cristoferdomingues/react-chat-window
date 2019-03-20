@@ -19,4 +19,5 @@
   box-sizing: border-box;
   background-color: buttonface;
   -webkit-appearance: button;
+  width: 100%;
 }

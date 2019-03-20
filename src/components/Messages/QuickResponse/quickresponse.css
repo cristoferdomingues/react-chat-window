@@ -1,0 +1,7 @@
+.sc-message--quick-response .container {
+  padding: 2px 16px;
+}
+
+.sc-message--quick-response .container h4 {
+  font: bold 15px/1.5 Helvetica, Verdana, sans-serif;
+}
